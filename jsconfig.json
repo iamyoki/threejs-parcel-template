@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "ES6",
+    "lib": ["DOM", "ESNext"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}

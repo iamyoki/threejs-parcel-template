@@ -1,0 +1,19 @@
+{
+  "name": "treejs-parcel-template",
+  "version": "1.0.0",
+  "author": "Yoki Yu <yokiyuqian@gmail.com>",
+  "license": "MIT",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel --open",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@types/three": "^0.139.0",
+    "parcel": "^2.5.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "three": "^0.139.2"
+  }
+}
