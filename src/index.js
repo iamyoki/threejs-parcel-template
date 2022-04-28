@@ -47,6 +47,7 @@ tick(() => {
 // fn
 function render() {
   renderer.setSize(innerWidth, innerHeight, false);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.render(scene, camera);
 }
 
