@@ -1,5 +1,7 @@
+import dat from 'dat.gui';
 import {
   BoxGeometry,
+  Color,
   Mesh,
   MeshBasicMaterial,
   PerspectiveCamera,
@@ -61,3 +63,12 @@ function handleResize() {
     render();
   });
 }
+
+// debug
+const gui = new dat.GUI();
+gui.add(mesh.position, 'y', -1, 1, 0.01);
+gui.add(mesh, 'visible');
+gui.add(mesh.material, 'wireframe');
+gui.addColor({color: '#fff'}, 'color').onChange(value => {
+  mesh.material.color = new Color(value);
+});
