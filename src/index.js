@@ -21,7 +21,10 @@ const scene = new Scene();
 const renderer = new WebGLRenderer({canvas});
 
 // camera
-const camera = new PerspectiveCamera(75, innerWidth / innerHeight);
+const camera = new PerspectiveCamera(
+  75,
+  canvas.clientWidth / canvas.clientHeight
+);
 
 // objects
 const mesh = new Mesh(
@@ -46,15 +49,14 @@ tick(() => {
 
 // fn
 function render() {
-  renderer.setSize(innerWidth, innerHeight, false);
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.render(scene, camera);
 }
 
 function handleResize() {
   window.addEventListener('resize', () => {
-    const {clientWidth, clientHeight} = canvas;
-    camera.aspect = clientWidth / clientHeight;
+    camera.aspect = canvas.clientWidth / canvas.clientHeight;
     camera.updateProjectionMatrix();
     render();
   });
