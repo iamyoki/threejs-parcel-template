@@ -13,29 +13,41 @@ import {tick} from './helpers';
 
 /* You can remove or modify the following quick start code */
 
-// canvas
+/**
+ * canvas
+ */
 const canvas = document.getElementById('threejs');
 
-// scene
+/**
+ * scene
+ */
 const scene = new Scene();
 
-// renderer
+/**
+ * renderer
+ */
 const renderer = new WebGLRenderer({canvas});
 
-// camera
+/**
+ * camera
+ */
 const camera = new PerspectiveCamera(
   75,
   canvas.clientWidth / canvas.clientHeight
 );
 
-// objects
+/**
+ * objects
+ */
 const mesh = new Mesh(
   new BoxGeometry(1, 1, 1, 4, 4, 4),
   new MeshBasicMaterial({color: 'royalblue', wireframe: true})
 );
 scene.add(mesh);
 
-// controls
+/**
+ * controls
+ */
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.maxPolarAngle = Math.PI / 2;
@@ -49,7 +61,9 @@ tick(() => {
   controls.update();
 });
 
-// fn
+/**
+ * fn
+ */
 function render() {
   renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -64,7 +78,9 @@ function handleResize() {
   });
 }
 
-// debug
+/**
+ * debug
+ */
 const gui = new dat.GUI();
 gui.add(mesh.position, 'y', -1, 1, 0.01);
 gui.add(mesh, 'visible');
