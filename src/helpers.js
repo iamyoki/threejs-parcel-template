@@ -1,7 +1,7 @@
 /**
  * @param {(time: number)=>boolean} callback¡
  */
-export function tick(callback, time = performance.now()) {
+export function tick(callback, time = 0) {
   const next = callback(time);
   if (next !== false) {
     requestAnimationFrame(time => {
